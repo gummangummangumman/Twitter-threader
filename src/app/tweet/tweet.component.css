@@ -13,6 +13,20 @@ img {
     margin-left: 8px;
 }
 
+.tweetText {
+    max-width: 500px;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+.illegal {
+    color: red;
+}
+
+.error {
+    font-weight: bold;
+}
+
 #tweet {
     margin-top: 100px;
 }

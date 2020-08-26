@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PostService {
 
-  text = "<Default tweet>";
+  text = "";
 
   constructor() {
   }
