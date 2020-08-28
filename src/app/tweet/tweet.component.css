@@ -20,11 +20,12 @@ img {
 }
 
 .illegal {
-    color: red;
+    background-color: red;
 }
 
 .error {
     font-weight: bold;
+    color: red;
 }
 
 #tweet {
