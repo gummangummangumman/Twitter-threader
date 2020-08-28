@@ -1,3 +1,8 @@
+#facebookPost {
+    margin-top: 100px;
+    width: 400px;
+}
+
 img {
     border-radius: 50%;
     width: 50px;
@@ -14,21 +19,12 @@ img {
     margin-left: 4px;
 }
 
-.tweetText {
+.postText {
     max-width: 500px;
     overflow: auto;
     word-wrap: break-word;
 }
 
-.illegal {
-    background-color: red;
-}
-
-.error {
-    font-weight: bold;
-    color: red;
-}
-
-#facebookPost {
-    margin-top: 100px;
+td {
+    float:left;
 }
