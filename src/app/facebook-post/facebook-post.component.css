@@ -1,0 +1,34 @@
+img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.displayName {
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.timeText {
+    font-weight: normal;
+    color: gray;
+    margin-left: 4px;
+}
+
+.tweetText {
+    max-width: 500px;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+.illegal {
+    background-color: red;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
+}
+
+#facebookPost {
+    margin-top: 100px;
+}
