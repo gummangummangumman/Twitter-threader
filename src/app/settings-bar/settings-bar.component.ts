@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../post-service/post.service';
 
 @Component({
@@ -8,12 +9,19 @@ import { PostService } from '../post-service/post.service';
 })
 export class SettingsBarComponent implements OnInit {
   postService:PostService;
-  constructor(postService:PostService)
+  constructor(postService:PostService, private route: ActivatedRoute)
   {
     this.postService = postService;
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+    this.route.queryParams.forEach(p => {
+      if (p.hidetweet === "true")
+        this.postService.showTweet = false;
+      if (p.hidefb === "true")
+        this.postService.showFacebookPost = false;
+    });
   }
 
 }
