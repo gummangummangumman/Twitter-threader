@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class PostService {
 
   text = "";
+  showTweet = true;
+  showFacebookPost = true;
 
   constructor() {
   }

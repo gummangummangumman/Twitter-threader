@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { PostService } from './post-service/post.service';
 import { FacebookPostComponent } from './facebook-post/facebook-post.component';
+import { SettingsBarComponent } from './settings-bar/settings-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TweetComponent,
-    FacebookPostComponent
+    FacebookPostComponent,
+    SettingsBarComponent
   ],
   imports: [
     BrowserModule,

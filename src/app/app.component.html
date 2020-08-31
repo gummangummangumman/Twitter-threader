@@ -10,6 +10,7 @@
 
 <div class="content" role="main">
   <textarea id="postInput" name="postInput" rows="6" cols="50" placeholder="Write your post here ..." [(ngModel)]="postService.text"></textarea>
-  <tweet></tweet>
-  <facebook-post></facebook-post>
+  <settings-bar></settings-bar>
+  <tweet *ngIf="postService.showTweet"></tweet>
+  <facebook-post *ngIf="postService.showFacebookPost"></facebook-post>
 </div>
