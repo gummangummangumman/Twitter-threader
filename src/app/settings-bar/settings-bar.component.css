@@ -1,4 +1,9 @@
-#settingsbar
+#settings-bar
 {
-    min-width: 300px; /* Funker ikke??? */
+    min-width: 300px;
+}
+
+.hidden
+{
+    display: none;
 }

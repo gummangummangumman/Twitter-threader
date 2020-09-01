@@ -26,12 +26,16 @@ export class TweetThreadComponent implements OnInit {
   {
     let text = this.post;
     this.tweetPosts = [];
+    let counter = 1;
+    let counterMax = Math.ceil(this.post.length / this.maxNumberOfCharacters);
     while (text !== "")
     {
-      this.tweetPosts.push(this.first(text));
+      let counterText = this.counterText(counter, counterMax);
+      let postWithCounter = counterText + this.first(text, this.maxNumberOfCharacters - counterText.length);
+      this.tweetPosts.push(postWithCounter);
       text = this.rest(text);
+      counter++;
     }
-    console.log(this.tweetPosts);
   }
 
   //returns the first i characters of a string
@@ -44,6 +48,13 @@ export class TweetThreadComponent implements OnInit {
   rest(text:string, i:number = this.maxNumberOfCharacters)
   {
     return text.slice(i);
+  }
+
+  //returns a counter as text, including the space at the end.
+  //for instance, 1 and 20 would return "1/20 "
+  counterText(counter:number, of:number)
+  {
+    return (counter + "/" + of + " ");
   }
 
 }

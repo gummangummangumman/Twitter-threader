@@ -8,6 +8,8 @@ import { PostService } from '../post-service/post.service';
   styleUrls: ['./settings-bar.component.css']
 })
 export class SettingsBarComponent implements OnInit {
+
+  class="hidden";
   postService:PostService;
   constructor(postService:PostService, private route: ActivatedRoute)
   {
@@ -21,6 +23,8 @@ export class SettingsBarComponent implements OnInit {
         this.postService.showTweet = false;
       if (p.hidefb === "true")
         this.postService.showFacebookPost = false;
+      if (p.settings === "true")
+        this.class = "";
     });
   }
 
