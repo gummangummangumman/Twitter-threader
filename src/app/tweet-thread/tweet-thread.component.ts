@@ -27,13 +27,13 @@ export class TweetThreadComponent implements OnInit {
     let text = this.post;
     this.tweetPosts = [];
     let counter = 1;
-    let counterMax = Math.ceil(this.post.length / this.maxNumberOfCharacters);
+    let counterMax = Math.ceil(text.length / this.maxNumberOfCharacters); //TODO inkludér counterText
     while (text !== "")
     {
       let counterText = this.counterText(counter, counterMax);
       let postWithCounter = counterText + this.first(text, this.maxNumberOfCharacters - counterText.length);
       this.tweetPosts.push(postWithCounter);
-      text = this.rest(text);
+      text = this.rest(text, this.maxNumberOfCharacters - counterText.length);
       counter++;
     }
   }
