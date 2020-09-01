@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PostService } from '../post-service/post.service';
-import { stringify } from '@angular/compiler/src/util';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'tweet',
@@ -9,12 +7,10 @@ import { stringify } from '@angular/compiler/src/util';
 })
 export class TweetComponent implements OnInit {
 
-  postService:PostService;
   maxNumberOfCharacters = 280;
+  @Input() post: string;
 
-  constructor(postService:PostService) {
-    this.postService = postService;
-  }
+  constructor() {}
 
   //returns the first i characters of a string
   first(text:string, i:number = this.maxNumberOfCharacters)

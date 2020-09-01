@@ -7,8 +7,8 @@ export class PostService {
 
   text = "";
   showTweet = true;
-  showTweetAsThread = false;
-  showFacebookPost = true;
+  showTweetAsThread = true;
+  showFacebookPost = false;
 
   constructor() {
   }

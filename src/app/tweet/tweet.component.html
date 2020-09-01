@@ -10,9 +10,9 @@
           </th>
         </tr>
         <tr>
-          <td><p class="tweetText">{{first(postService.text)}}<span class="illegal">{{rest(postService.text)}}</span></p></td>
+          <td><p class="tweetText">{{first(post)}}<span class="illegal">{{rest(post)}}</span></p></td>
         </tr>
-        <tr *ngIf="postService.text.length > maxNumberOfCharacters" class="error">
+        <tr *ngIf="post.length > maxNumberOfCharacters" class="error">
             <td>Tweets can not be longer than {{maxNumberOfCharacters}} characters long!</td>
         </tr>
       </table>

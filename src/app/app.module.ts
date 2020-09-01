@@ -7,13 +7,15 @@ import { PostService } from './post-service/post.service';
 import { FacebookPostComponent } from './facebook-post/facebook-post.component';
 import { SettingsBarComponent } from './settings-bar/settings-bar.component';
 import { RouterModule } from '@angular/router';
+import { TweetThreadComponent } from './tweet-thread/tweet-thread.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TweetComponent,
     FacebookPostComponent,
-    SettingsBarComponent
+    SettingsBarComponent,
+    TweetThreadComponent
   ],
   imports: [
     BrowserModule,
