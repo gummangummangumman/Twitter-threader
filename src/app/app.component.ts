@@ -11,7 +11,7 @@ import { SettingsService } from './settings-service/settings.service';
 export class AppComponent {
   postService:PostService;
   settingsService:SettingsService;
-  title = 'Social media helper';
+  title = 'Twitter Threader';
   constructor(postService:PostService, settingsService:SettingsService)
   {
     this.postService = postService;

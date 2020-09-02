@@ -8,6 +8,7 @@ import { FacebookPostComponent } from './facebook-post/facebook-post.component';
 import { SettingsBarComponent } from './settings-bar/settings-bar.component';
 import { RouterModule } from '@angular/router';
 import { TweetThreadComponent } from './tweet-thread/tweet-thread.component';
+import { DescriptionComponent } from './description/description.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TweetThreadComponent } from './tweet-thread/tweet-thread.component';
     TweetComponent,
     FacebookPostComponent,
     SettingsBarComponent,
-    TweetThreadComponent
+    TweetThreadComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
