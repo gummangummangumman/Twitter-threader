@@ -1,5 +1,4 @@
 import { Component, OnInit, SimpleChanges, Input } from '@angular/core';
-import { PostService } from '../post-service/post.service';
 
 @Component({
   selector: 'tweet-thread',
@@ -11,11 +10,12 @@ export class TweetThreadComponent implements OnInit {
   @Input() post:string;
   maxNumberOfCharacters:number = 280;
   tweetPosts:string[];
-  postService:PostService;
+  
+  doubleDigitCounterMax:string = "99/99 ";
+  tripleDigitCounterMax:string = "999/999 ";
 
-  constructor(postService:PostService)
+  constructor()
   {
-    this.postService = postService;
     this.tweetPosts = [""];
   }
 
@@ -24,16 +24,20 @@ export class TweetThreadComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges)
   {
+    this.tweetPosts = []; //reset
+
     let text = this.post;
-    this.tweetPosts = [];
     let counter = 1;
-    let counterMax = Math.ceil(text.length / this.maxNumberOfCharacters); //TODO inkludér counterText
+    let maxCounterText = this.doubleDigitCounterMax;
+    if(text.length > 271000)
+      maxCounterText = this.tripleDigitCounterMax;
+    let counterMax = Math.ceil(text.length / (this.maxNumberOfCharacters - maxCounterText.length)); //TODO inkludér counterText
     while (text !== "")
     {
       let counterText = this.counterText(counter, counterMax);
-      let postWithCounter = counterText + this.first(text, this.maxNumberOfCharacters - counterText.length);
+      let postWithCounter = counterText + this.first(text, this.maxNumberOfCharacters - maxCounterText.length);
       this.tweetPosts.push(postWithCounter);
-      text = this.rest(text, this.maxNumberOfCharacters - counterText.length);
+      text = this.rest(text, this.maxNumberOfCharacters - maxCounterText.length);
       counter++;
     }
   }
