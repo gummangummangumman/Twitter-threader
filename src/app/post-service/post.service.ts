@@ -6,9 +6,6 @@ import { Injectable } from '@angular/core';
 export class PostService {
 
   text = "";
-  showTweet = true;
-  showTweetAsThread = true;
-  showFacebookPost = false;
 
   constructor() {
   }

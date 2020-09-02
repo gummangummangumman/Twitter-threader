@@ -1,10 +1,12 @@
-<div id="settings-bar" class="{{class}}">
-    <input type="checkbox" id="showTweetCheckbox" name="showTweetCheckbox" [(ngModel)]="postService.showTweet">
-    <label for="showTweetCheckbox">Show tweet</label><br>
-    <div *ngIf="postService.showTweet">
-        <input type="checkbox" id="showTweetThreadCheckbox" name="showTweetThreadCheckbox" [(ngModel)]="postService.showTweetAsThread">
-        <label for="showTweetThreadCheckbox">Show tweet as a thread of tweets</label><br>
+<div id="settings-bar">
+    <div id="extra-settings" class="{{class}}">
+        <input type="checkbox" id="showTweetCheckbox" name="showTweetCheckbox" [(ngModel)]="settingsService.showTweet">
+        <label for="showTweetCheckbox">Show tweet</label><br>
+        <div *ngIf="settingsService.showTweet">
+            <input type="checkbox" id="showTweetThreadCheckbox" name="showTweetThreadCheckbox" [(ngModel)]="settingsService.showTweetAsThread">
+            <label for="showTweetThreadCheckbox">Show tweet as a thread of tweets</label><br>
+        </div>
+        <input type="checkbox" id="showFacebookPostCheckbox" name="showFacebookPostCheckbox" [(ngModel)]="settingsService.showFacebookPost">
+        <label for="showFacebookPostCheckbox">Show facebook post</label><br>
     </div>
-    <input type="checkbox" id="showFacebookPostCheckbox" name="showFacebookPostCheckbox" [(ngModel)]="postService.showFacebookPost">
-    <label for="showFacebookPostCheckbox">Show facebook post</label><br>
 </div>
