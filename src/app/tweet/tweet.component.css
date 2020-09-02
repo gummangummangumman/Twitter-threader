@@ -1,6 +1,22 @@
-img {
+.imgContainer
+{
+    height: 100%;
+    position: relative;
+    width: 50px;
+}
+
+img
+{
     border-radius: 50%;
     width: 50px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.names
+{
+    float: left;
 }
 
 .displayName {
@@ -17,6 +33,7 @@ img {
     max-width: 500px;
     overflow: auto;
     word-wrap: break-word;
+    margin-top: 0%;
 }
 
 .illegal {
@@ -28,6 +45,16 @@ img {
     color: red;
 }
 
-#tweet {
-    margin-top: 100px;
+#tweet
+{
+    margin-top: 20px;
+    border: solid;
+    border-radius: 20px;
+    border-color: black;
+    width: 600px;
+}
+
+#tweet:hover
+{
+    background-color: #f0f0f0;
 }
