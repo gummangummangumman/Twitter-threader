@@ -26,7 +26,7 @@ export class TweetThreadComponent implements OnInit {
   {
     this.tweetPosts = []; //reset
 
-    let text = this.post;
+    let text = this.filterUnnecessaryWhiteSpace(this.post);
     let counter = 1;
     let maxCounterText = this.doubleDigitCounterMax;
     if(text.length > 271000)
@@ -52,6 +52,12 @@ export class TweetThreadComponent implements OnInit {
   rest(text:string, i:number = this.maxNumberOfCharacters)
   {
     return text.slice(i);
+  }
+
+  // replaces all newlines and double spaces with single space
+  filterUnnecessaryWhiteSpace(text:string)
+  {
+    return text.replace(/\n+|\s\s+/g, ' ');
   }
 
   //returns a counter as text, including the space at the end.
