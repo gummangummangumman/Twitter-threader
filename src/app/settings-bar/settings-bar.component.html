@@ -1,4 +1,6 @@
 <div id="settings-bar">
+    <input type="checkbox" id="counterAtEndCheckbox" name="counterAtEndCheckbox" [(ngModel)]="settingsService.counterAtEnd">
+    <label for="counterAtEndCheckbox">Counter at the end</label><br>
     <div id="extra-settings" class="{{class}}">
         <input type="checkbox" id="showTweetCheckbox" name="showTweetCheckbox" [(ngModel)]="settingsService.showTweet">
         <label for="showTweetCheckbox">Show tweet</label><br>

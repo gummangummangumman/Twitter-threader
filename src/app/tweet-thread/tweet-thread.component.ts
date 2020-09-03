@@ -7,12 +7,13 @@ import { Component, OnInit, SimpleChanges, Input } from '@angular/core';
 })
 export class TweetThreadComponent implements OnInit {
 
+  @Input() counterAtEnd;
   @Input() post:string;
   maxNumberOfCharacters:number = 280;
   tweetPosts:string[];
   
-  doubleDigitCounterMax:string = "99/99 ";
-  tripleDigitCounterMax:string = "999/999 ";
+  doubleDigitCounterMax:string = "(99/99) ";
+  tripleDigitCounterMax:string = "(999/999) ";
 
   constructor()
   {
@@ -26,6 +27,9 @@ export class TweetThreadComponent implements OnInit {
   {
     this.tweetPosts = []; //reset
 
+    if(this.counterAtEnd)
+      this.counterAtEnd = (this.counterAtEnd === true || this.counterAtEnd != "false"); //convert string to boolean
+
     let text = this.filterUnnecessaryWhiteSpace(this.post);
     let counter = 1;
     let maxCounterText = this.doubleDigitCounterMax;
@@ -35,8 +39,13 @@ export class TweetThreadComponent implements OnInit {
     while (text !== "")
     {
       let counterText = this.counterText(counter, counterMax);
-      let postWithCounter = counterText + this.first(text, this.maxNumberOfCharacters - maxCounterText.length);
-      this.tweetPosts.push(postWithCounter);
+      let postWithCounter = this.first(text, this.maxNumberOfCharacters - maxCounterText.length);
+      if (this.counterAtEnd)
+        postWithCounter = postWithCounter + " " + counterText;
+      else
+        postWithCounter = counterText + " " + postWithCounter;
+      
+      this.tweetPosts.push(postWithCounter);      
       text = this.rest(text, this.maxNumberOfCharacters - maxCounterText.length);
       counter++;
     }
@@ -60,11 +69,11 @@ export class TweetThreadComponent implements OnInit {
     return text.replace(/\n+|\s\s+/g, ' ');
   }
 
-  //returns a counter as text, including the space at the end.
-  //for instance, 1 and 20 would return "1/20 "
+  //returns a counter as text.
+  //for instance, 1 and 20 would return "(1/20)"
   counterText(counter:number, of:number)
   {
-    return (counter + "/" + of + " ");
+    return ("(" + counter + "/" + of + ")");
   }
 
 }

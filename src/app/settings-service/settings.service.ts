@@ -9,5 +9,7 @@ export class SettingsService {
   showTweetAsThread = true;
   showFacebookPost = false;
 
+  counterAtEnd = false;
+
   constructor() { }
 }
