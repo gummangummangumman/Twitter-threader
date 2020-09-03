@@ -9,6 +9,8 @@ import { SettingsBarComponent } from './settings-bar/settings-bar.component';
 import { RouterModule } from '@angular/router';
 import { TweetThreadComponent } from './tweet-thread/tweet-thread.component';
 import { DescriptionComponent } from './description/description.component';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { DescriptionComponent } from './description/description.component';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    ClipboardModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
