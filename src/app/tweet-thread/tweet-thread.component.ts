@@ -46,8 +46,8 @@ export class TweetThreadComponent implements OnInit {
         let cutOffIndex = postWithCounter.lastIndexOf(" ") + 1;
         if (cutOffIndex < 30)
           cutOffIndex = sizeOfMessage;
-        postWithCounter = postWithCounter.substring(0, cutOffIndex - 1);
-        sizeOfMessage = cutOffIndex + maxCounterText.length;
+        postWithCounter = postWithCounter.substring(0, cutOffIndex);
+        sizeOfMessage = cutOffIndex;
       }
       if (this.counterAtEnd)
         postWithCounter = postWithCounter + " " + counterText;
@@ -55,7 +55,7 @@ export class TweetThreadComponent implements OnInit {
         postWithCounter = counterText + " " + postWithCounter;
       
       this.tweetPosts.push(postWithCounter);      
-      text = this.rest(text, sizeOfMessage - maxCounterText.length);
+      text = this.rest(text, sizeOfMessage);
       counter++;
     }
   }
