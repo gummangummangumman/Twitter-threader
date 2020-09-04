@@ -35,18 +35,27 @@ export class TweetThreadComponent implements OnInit {
     let maxCounterText = this.doubleDigitCounterMax;
     if(text.length > 271000)
       maxCounterText = this.tripleDigitCounterMax;
-    let counterMax = Math.ceil(text.length / (this.maxNumberOfCharacters - maxCounterText.length)); //TODO inkludér counterText
+    const counterMax = Math.ceil(text.length / (this.maxNumberOfCharacters - maxCounterText.length));
     while (text !== "")
     {
       let counterText = this.counterText(counter, counterMax);
-      let postWithCounter = this.first(text, this.maxNumberOfCharacters - maxCounterText.length);
+      let sizeOfMessage = this.maxNumberOfCharacters - maxCounterText.length;
+      let postWithCounter = this.first(text, sizeOfMessage);
+      if (postWithCounter.length < text.length) //if there is more after
+      {
+        let cutOffIndex = postWithCounter.lastIndexOf(" ") + 1;
+        if (cutOffIndex < 30)
+          cutOffIndex = sizeOfMessage;
+        postWithCounter = postWithCounter.substring(0, cutOffIndex - 1);
+        sizeOfMessage = cutOffIndex + maxCounterText.length;
+      }
       if (this.counterAtEnd)
         postWithCounter = postWithCounter + " " + counterText;
       else
         postWithCounter = counterText + " " + postWithCounter;
       
       this.tweetPosts.push(postWithCounter);      
-      text = this.rest(text, this.maxNumberOfCharacters - maxCounterText.length);
+      text = this.rest(text, sizeOfMessage - maxCounterText.length);
       counter++;
     }
   }
