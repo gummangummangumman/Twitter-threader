@@ -1,14 +1,4 @@
 <div id="settings-bar">
     <input type="checkbox" id="counterAtEndCheckbox" name="counterAtEndCheckbox" [(ngModel)]="settingsService.counterAtEnd">
     <label for="counterAtEndCheckbox">Counter at the end</label><br>
-    <div id="extra-settings" class="{{class}}">
-        <input type="checkbox" id="showTweetCheckbox" name="showTweetCheckbox" [(ngModel)]="settingsService.showTweet">
-        <label for="showTweetCheckbox">Show tweet</label><br>
-        <div *ngIf="settingsService.showTweet">
-            <input type="checkbox" id="showTweetThreadCheckbox" name="showTweetThreadCheckbox" [(ngModel)]="settingsService.showTweetAsThread">
-            <label for="showTweetThreadCheckbox">Show tweet as a thread of tweets</label><br>
-        </div>
-        <input type="checkbox" id="showFacebookPostCheckbox" name="showFacebookPostCheckbox" [(ngModel)]="settingsService.showFacebookPost">
-        <label for="showFacebookPostCheckbox">Show facebook post</label><br>
-    </div>
 </div>

@@ -5,10 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class SettingsService {
 
-  showTweet = true;
-  showTweetAsThread = true;
-  showFacebookPost = false;
-
   counterAtEnd = true;
 
   constructor() { }

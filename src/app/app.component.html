@@ -15,6 +15,5 @@
   <description></description>
   <textarea id="postInput" name="postInput" rows="6" cols="50" placeholder="Write your post here ..." [(ngModel)]="postService.text"></textarea>
   <settings-bar></settings-bar>
-  <tweet-thread *ngIf="settingsService.showTweet" post="{{postService.text}}" counterAtEnd="{{settingsService.counterAtEnd}}"></tweet-thread>
-  <facebook-post *ngIf="settingsService.showFacebookPost"></facebook-post>
+  <tweet-thread post="{{postService.text}}" counterAtEnd="{{settingsService.counterAtEnd}}"></tweet-thread>
 </div>
