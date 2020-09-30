@@ -66,4 +66,11 @@ img, .atName, .displayName
 {
     background-color: #f0f0f0;
     cursor: copy;
+    transition: background 0.6s;
+}
+
+#tweet:active
+{
+    background-color: #b0f0b0;
+    transition: background 0s;
 }
