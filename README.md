@@ -12,4 +12,10 @@ Similar projects:
 
 ## Framework
 
-This project is using [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
+This project is using [Angular CLI](https://github.com/angular/angular-cli).
+
+## Deployment
+
+`ng build --base-href /twitter-threader/`
+
+After this command is run, copy the files from the `dist` folder into your website! `twitter-threader` must be replaced with whatever path you put it under within your website.
